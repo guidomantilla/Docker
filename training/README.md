@@ -10,7 +10,7 @@ Curso de Docker.
     - ssh-add ~/.ssh/id_rsa  
 1. Clonar este repositorio localmente: https://github.com/guidomantilla/Docker.git
 1. Abrir la presentacion Power Point
-1. Descargar el archivo vdi desde XXX
+1. Descargar el archivo vdi desde https://drive.google.com/open?id=17jgS5cZHT6shF4CVO-G0-1zuRETB_VV5
 1. Descargar e instalar Virtual Box (https://www.virtualbox.org/)
 1. Crear una maquina virtual con las siguientes caracteristicas:
     - RAM: **4GB**
@@ -18,7 +18,7 @@ Curso de Docker.
     - Adaptador de Red 2: **Host Only**
     - Carpetas compartidas: **Seleccionar una del Disco Duro del Equipo**
 1. Iniciar la maquina virtual en modo **Desacomplado**
-1. Usando Git Bash, ingresamos a la maquina virtual usando el comando **ssh osboxes@192.168.56.102**. La contraseña es **osboxes.org**
+1. Usando Git Bash, ingresamos a la maquina virtual usando el comando **ssh osboxes@[VM IP]**. La contraseña es **osboxes.org**
 
 ## Comandos Basicos Docker
 Los comandos basicos para usar docker son:
