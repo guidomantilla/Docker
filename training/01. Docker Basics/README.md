@@ -6,7 +6,7 @@
 Aqui vamos a crear nuestro primer contenedor docker. En esta ocasion el contenedor ejecutara un aplicativo Spring Boot de ejemplo.
 Se deberan los siguentes pasos asi:
 
-1. Vamos a la raiz del proyecto JAVA a contruir: **cd workspaces/java/sample.web**
+1. Vamos a la raiz del proyecto JAVA a construir: **cd workspaces/java/sample.web**
 1. Construimos el proyecto JAVA: **mvn clean install**
 1. Verificamos el contenido del Dockerfile: **cat Dockerfile**
 1. Construimos la imagen Docker con el programa JAVA dentro: **docker build -t sample.web .**
@@ -32,12 +32,13 @@ Se deberan los siguentes pasos asi:
 1. Ejecutamos: **sh docker-show-env.sh** (tomar en cuenta la ubicacion relativa)
 
 ## Segundo Contenedor Docker
-1. Ejecutamos: **cd workspaces/node/ChatApp**
-1. Ejecutamos: **cat Dockerfile**
-1. Ejecutamos: **docker build -t sample.chat .**
-1. Ejecutamos: **sh docker-show-env.sh** 
-1. Ejecutamos: **docker container run --publish 3000:3000 --detach --name sample.chat sample.chat**
-1. Ejecutamos: **sh docker-show-env.sh** 
+1. Vamos a la raiz del proyecto NodeJS a construir: **cd workspaces/node/ChatApp**
+1. Verificamos el contenido del Dockerfile: **cat Dockerfile**
+1. Construimos la imagen Docker con el programa NodeJS dentro: **docker build -t sample.chat .**
+1. Ejecutamos: **sh docker-show-env.sh**  (tomar en cuenta la ubicacion relativa)
+1. Creamos un nuevo contenedor a partir de la imagen construida: **docker container run --publish 3000:3000 --detach --name sample.chat sample.chat**
+1. Ejecutamos: **sh docker-show-env.sh**  (tomar en cuenta la ubicacion relativa)
+
 1. En el navegador del equipo, ingresamos: **http://[VM IP]:3000/**
 1. Para detener el contenedor, ejecutamos: **docker container stop sample.chat**
 1. Ejecutamos: **sh docker-show-env.sh** 
