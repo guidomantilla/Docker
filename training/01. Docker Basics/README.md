@@ -1,48 +1,17 @@
-# Docker Training
-Curso de Docker.
-
-## Prerequisitos
-1. Verificar que el equipo este habilitado para la virtualizacion (revisar la BIOS)
-1. Verificar que se tenga instalado Git Bash. Una vez hecho esto ejecutar:
-    - ssh-keygen -t rsa -b 4096 -C 'su.correo@electronico.porfavor'
-    - ls -al ~/.ssh 
-    - eval "$(ssh-agent -s)" 
-    - ssh-add ~/.ssh/id_rsa  
-1. Clonar este repositorio localmente: https://github.com/guidomantilla/Docker.git
-1. Abrir el archivo Docker Slides.PDF
-1. Descargar el archivo vdi desde https://drive.google.com/open?id=17jgS5cZHT6shF4CVO-G0-1zuRETB_VV5
-1. Descargar e instalar Virtual Box (https://www.virtualbox.org/)
-1. Crear una maquina virtual con las siguientes caracteristicas:
-    - RAM: **4GB**
-    - Adaptador de Red 1: **NAT**
-    - Adaptador de Red 2: **Host Only**
-    - Carpetas compartidas: **Seleccionar una del Disco Duro del Equipo**
-1. Iniciar la maquina virtual en modo **Desacomplado**
-1. Usando Git Bash, ingresamos a la maquina virtual usando el comando **ssh osboxes@[VM IP]**. La contraseña es **osboxes.org**
-
-## Comandos Basicos Docker
-Los comandos basicos para ver el estado del docker engine local:
-1. docker image ls
-1. docker container ls -a
-1. docker network ls
-
-Para ahorrar un poco de escritura, vamos a crear un archivo **sh** que ejecutara varios comandos al tiempo, asi:
-1. Ejecutamos: **touch docker-show-env.sh**
-1. Ejecutamos: **nano docker-show-env.sh**
-1. Escribir: **echo && docker image ls && echo && docker container ls -a && echo && docker network ls && echo**
-1. Guardamos.
-1. Ejecutamos: **sh docker-show-env.sh** 
-
+# Docker Basics
 
 ## Primer Contenedor Docker
 Aqui vamos a crear nuestro primer contenedor docker. En esta ocasion el contenedor ejecutara un aplicativo Spring Boot de ejemplo.
-1. Ejecutamos: **cd workspaces/java/sample.web**
-1. Ejecutamos: **mvn clean install**
-1. Ejecutamos: **cat Dockerfile**
-1. Ejecutamos: **docker build -t sample.web .**
-1. Ejecutamos: **sh docker-show-env.sh** 
-1. Ejecutamos: **docker container run --publish 9090:9090 --detach --name sample.web sample.web**
-1. Ejecutamos: **sh docker-show-env.sh** 
+Se deberan los siguentes pasos asi:
+
+1. Vamos a la raiz del proyecto JAVA a contruir: **cd workspaces/java/sample.web**
+1. Construimos el proyecto JAVA: **mvn clean install**
+1. Verificamos el contenido del Dockerfile: **cat Dockerfile**
+1. Construimos la imagen Docker con el programa JAVA dentro: **docker build -t sample.web .**
+1. Ejecutamos: **sh docker-show-env.sh** (tomar en cuenta la ubicacion relativa)
+1. Creamos un nuevo contenedor a partir de la imagen construida: **docker container run --publish 9090:9090 --detach --name sample.web sample.web**
+1. Ejecutamos: **sh docker-show-env.sh** (tomar en cuenta la ubicacion relativa)
+
 1. En el navegador del equipo, ingresamos: **http://[VM IP]:9090/dummies**
 1. Para detener el contenedor, ejecutamos: **docker container stop sample.web**
 1. Ejecutamos: **sh docker-show-env.sh** 
