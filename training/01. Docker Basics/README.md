@@ -1,4 +1,6 @@
 # Docker Basics
+1. Abrimos el archivo Docker Slides.PDF
+1. Seguimos los siguientes tutoriales.
 
 ## Primer Contenedor Docker
 Aqui vamos a crear nuestro primer contenedor docker. En esta ocasion el contenedor ejecutara un aplicativo Spring Boot de ejemplo.
@@ -14,9 +16,11 @@ Se deberan los siguentes pasos asi:
 
 1. En el navegador del equipo, ingresamos: **http://[VM IP]:9090/dummies**
 1. Para detener el contenedor, ejecutamos: **docker container stop sample.web**
-1. Ejecutamos: **sh docker-show-env.sh** 
+1. Ejecutamos: **sh docker-show-env.sh** (tomar en cuenta la ubicacion relativa)
 1. Para volver a iniciar el contenedor, ejecutamos: **docker container start sample.web**
-1. Ejecutamos: **sh docker-show-env.sh** 
+1. Ejecutamos: **sh docker-show-env.sh** (tomar en cuenta la ubicacion relativa)
+1. En el navegador del equipo, ingresamos: **http://[VM IP]:9090/dummies**
+
 1. Para monitorear el contenedor, ejecutamos:
     - **docker container inspect sample.web**
     - **docker container top sample.web**
@@ -24,10 +28,8 @@ Se deberan los siguentes pasos asi:
     - **docker container logs sample.web**
 1. Para ingresar al shell del contenedor, ejecutamos: **docker container exec -it sample.web sh**
 1. Para salir del shell del contenedor, ejecutamos **exit**
-1. Ejecutamos: **sh docker-show-env.sh** 
-1. En el navegador del equipo, ingresamos: **http://[VM IP]:9090/dummies**
 1. Para eliminar el contenedor, ejecutamos: **docker container rm sample.web** o **docker container rm -f sample.web**
-1. Ejecutamos: **sh docker-show-env.sh** 
+1. Ejecutamos: **sh docker-show-env.sh** (tomar en cuenta la ubicacion relativa)
 
 ## Segundo Contenedor Docker
 1. Ejecutamos: **cd workspaces/node/ChatApp**

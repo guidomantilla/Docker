@@ -9,7 +9,6 @@ Curso de Docker.
     - eval "$(ssh-agent -s)" 
     - ssh-add ~/.ssh/id_rsa  
 1. Clonar este repositorio localmente: https://github.com/guidomantilla/Docker.git
-1. Abrir el archivo Docker Slides.PDF
 1. Descargar el archivo vdi desde https://drive.google.com/open?id=17jgS5cZHT6shF4CVO-G0-1zuRETB_VV5
 1. Descargar e instalar Virtual Box (https://www.virtualbox.org/)
 1. Crear una maquina virtual con las siguientes caracteristicas:
